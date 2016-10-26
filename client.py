@@ -1,6 +1,6 @@
 import socket
 HOST='10.111.4.230'
-PORT=50008
+PORT=50007
 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)   
 try:
 	s.connect((HOST,PORT))  
@@ -15,5 +15,4 @@ try:
 	s.close()   
 except Exception, error:
 	print error
-	print "server not valid"
 
