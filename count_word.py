@@ -45,7 +45,8 @@ def count_words(s, n):
     return ans[:n]
 
 #after I learn python from time to time for 40 days, I updated the implementation as follows:
-def count_upgrade(s):
+#9 lines left!!!
+def count_upgrade01(s):
     s = s.strip()
     words = s.split(" ")
     wdict = {}
@@ -55,6 +56,16 @@ def count_upgrade(s):
     from operator import itemgetter
     ans = sorted(wtpl, key=itemgetter(0,1))
     return ans
+
+#20 mins after upgrade01, I found another update:
+#6 lines left!!! I kept laughing for a long time!!!
+def count_upgrade02(s):
+    s = s.strip()
+    words = s.split(" ")
+    wdict = {}
+    for item in words:
+        wdict[item] = wdict.get(item, 0) + 1
+    return sorted(wdict.items(),key=lambda t: (t[1],t[0]))
            
 s = "cat bat mat cat bat cat"
 print(count_words(s,3))
