@@ -1,4 +1,6 @@
 #!python
+
+#1st implementation after I transit from other language to python:
 def count_words(s, n):
     # get word list from input string;
     words = s.split()
@@ -41,7 +43,18 @@ def count_words(s, n):
         ans += item
 
     return ans[:n]
-            
+
+#after I learn python from time to time for 40 days, I updated the implementation as follows:
+def count_upgrade(s):
+    s = s.strip()
+    words = s.split(" ")
+    wdict = {}
+    for item in words:
+        wdict[item] = wdict.get(item, 0) + 1
+    wtpl = zip(wdict.keys(),wdict.values())
+    from operator import itemgetter
+    ans = sorted(wtpl, key=itemgetter(0,1))
+    return ans
            
 s = "cat bat mat cat bat cat"
 print(count_words(s,3))
